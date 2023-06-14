@@ -1,0 +1,39 @@
+.side {
+  position: fixed;
+  top: 40px;
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: black;
+}
+
+.side__title {
+  margin: 10px 0;
+  /* font-family: "mango"; */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 72pt;
+}
+
+a:hover {
+  color: inherit;
+}
+
+.side__user {
+  margin-bottom: 20px;
+}
+
+.side__user li a:hover,
+.side__menu li a:hover {
+  color: gray;
+}
+
+.side__user li {
+  margin-bottom: 5px;
+}
+
+.side__menu li {
+  margin-bottom: 5px;
+}

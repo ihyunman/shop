@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "title": "Pink hood",
+    "price": "$63"
+  },
+  {
+    "id": 2,
+    "title": "Black hood",
+    "price": "$58"
+  },
+  {
+    "id": 3,
+    "title": "Beige dress",
+    "price": "$113"
+  },
+  {
+    "id": 4,
+    "title": "Beige pants",
+    "price": "$58"
+  },
+  {
+    "id": 5,
+    "title": "Stripe T-shirts",
+    "price": "$70"
+  },
+  {
+    "id": 6,
+    "title": "Black dress",
+    "price": "$180"
+  },
+  {
+    "id": 7,
+    "title": "Red jacket",
+    "price": "$150"
+  }
+]

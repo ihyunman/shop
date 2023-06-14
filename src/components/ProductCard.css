@@ -1,0 +1,26 @@
+.product__img {
+  width: 400px;
+  cursor: pointer;
+  transition: 1s all ease-out;
+}
+
+.product__img:hover {
+  opacity: 0.8;
+  width: 410px;
+}
+
+.product__title,
+.product__price {
+  margin: 0;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.product__title {
+  margin-bottom: 3px;
+  cursor: pointer;
+}
+
+.product__title:hover {
+  color: gray;
+}
