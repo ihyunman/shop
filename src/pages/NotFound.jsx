@@ -1,3 +1,8 @@
 export default function NotFound() {
-  return <h1>Not Found Page</h1>;
+  return (
+    <div className="container">
+      <div className="space"></div>
+      Not Found Page
+    </div>
+  );
 }

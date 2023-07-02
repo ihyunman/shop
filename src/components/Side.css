@@ -37,3 +37,10 @@ a:hover {
 .side__menu li {
   margin-bottom: 5px;
 }
+
+/* @media screen and (max-width: 770px) {
+  .side {
+    position: fixed;
+    top: 0;
+  }
+} */

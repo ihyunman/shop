@@ -1,0 +1,49 @@
+.detail {
+  display: flex;
+  width: 75%;
+}
+
+.detail__img {
+  width: 40%;
+  height: 550px;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+.detail__info {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail__info--title {
+  margin: 0;
+  font-size: 42px;
+  font-weight: bold;
+  height: 10%;
+}
+
+.detail__info--price {
+  font-weight: bold;
+  height: 10%;
+}
+
+.detail__info--desc {
+  height: 60%;
+}
+
+.detail__info--size {
+  height: 10%;
+}
+
+.detail__info--size .label {
+  width: 20%;
+  color: #1d1d1d;
+}
+
+.detail__info--size .options {
+  width: 80%;
+  height: 70%;
+  border: 0.5px dashed black;
+  border-radius: 5px;
+}
