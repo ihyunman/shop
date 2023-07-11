@@ -1,0 +1,24 @@
+.update__btn {
+  cursor: pointer;
+}
+.update__btn:hover {
+  color: gray;
+}
+
+.cart__item {
+  width: 80%;
+}
+
+.cart__item--title {
+  width: 20%;
+}
+.cart__item--price {
+  width: 20%;
+}
+
+.cart__item--quantity {
+  width: 10%;
+}
+.cart__item--delBtn {
+  width: 10%;
+}

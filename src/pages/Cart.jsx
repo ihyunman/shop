@@ -20,30 +20,47 @@ function Cart() {
     <div className="container">
       <div className="space"></div>
       <div className="cart">
-        <h1>CART</h1>
         <ul className="cart__list">
           {products &&
             products.map((product) => (
               <CartItem key={product.id} product={product} uid={user.uid} />
             ))}
         </ul>
-        <div className="cart__total">
-          <div className="cart__total--title">
+
+        <ul className="cart__total">
+          <li className="cart__total--title">
             <span>총 상품금액</span>
+            <span id="price">{price.toLocaleString()}</span>
+          </li>
+          <li>
+            <span></span>
+            <span> + </span>
+          </li>
+          <li>
+            <span>배송비</span>
+            <span>3,000</span>
+          </li>
+          <li>
+            <span></span>
+            <span> = </span>
+          </li>
+          <li>
+            <span>합계</span>
+            <span>{(price + 3000).toLocaleString()}</span>
+          </li>
+        </ul>
+        {/* <div className="cart__total--title">
             <span></span>
             <span>배송비</span>
             <span></span>
             <span>합계</span>
           </div>
           <div className="cart__total--price">
-            <span id="price">{price}</span>
             <span> + </span>
-
             <span id="delivery">3000</span>
             <span> = </span>
             <span> {price + 3000} </span>
-          </div>
-        </div>
+          </div> */}
       </div>
     </div>
   );

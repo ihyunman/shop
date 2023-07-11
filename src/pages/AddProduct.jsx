@@ -13,7 +13,15 @@ function AddProduct() {
     e.preventDefault();
 
     uploadImage(file).then((url) => {
-      addProduct.mutate({ product, url }, { onSuccess: () => {} });
+      addProduct.mutate(
+        { product, url },
+        {
+          onSuccess: () => {
+            setFile(null);
+            setProduct({});
+          },
+        }
+      );
     });
   };
 
@@ -29,24 +37,24 @@ function AddProduct() {
   return (
     <div className="container">
       <div className="space"></div>
-      {file && (
-        <img
-          className="form__img"
-          src={URL.createObjectURL(file)}
-          alt="local"
-        />
-      )}
-      <form onSubmit={handleSubmit}>
-        <ul>
-          <li>
-            <input
-              type="file"
-              accept="image/*"
-              name="file"
-              required
-              onChange={handleChange}
-            />
-          </li>
+      <div className="form__wrap">
+        {file && (
+          <img
+            className="form__img"
+            src={URL.createObjectURL(file)}
+            alt="product_img"
+          />
+        )}
+        {!file && <img className="form__img" src="" alt="Upload image" />}
+
+        <ul className="form__info">
+          <input
+            type="file"
+            accept="image/*"
+            name="file"
+            required
+            onChange={handleChange}
+          />
           <li>
             <input
               type="text"
@@ -97,9 +105,9 @@ function AddProduct() {
               onChange={handleChange}
             />
           </li>
+          <Button size="big" title="등록" onClick={handleSubmit} />
         </ul>
-        <Button className="small" title="등록" onClick={handleSubmit} />
-      </form>
+      </div>
     </div>
   );
 }

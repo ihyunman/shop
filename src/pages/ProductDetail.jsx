@@ -12,21 +12,25 @@ function ProductDetail() {
   const { user } = useAuthContext();
 
   const handleClick = () => {
-    addOrUpdateToCart(user.uid, { ...product, options: select, quantity: 1 });
+    addOrUpdateToCart(user.uid, {
+      ...product,
+      options: select,
+      quantity: 1,
+    }).then(() => alert("장바구니에 추가되었습니다."));
   };
 
   return (
     <div className="container">
       <div className="space"></div>
-      <div className="detail">
-        <img className="detail__img" src={image} />
-        <ul className="detail__info">
+      <div className="form__wrap">
+        <img className="form__img" src={image} />
+        <ul className="form__info">
           <h1 className="detail__info--title">{title.toUpperCase()}</h1>
           <li className="detail__info--price">₩{price.toLocaleString()}</li>
           <li className="detail__info--desc">{desc}</li>
           <li className="detail__info--size">
             <label htmlFor="option" className="label">
-              옵션 :
+              사이즈 :
             </label>
             <select
               id="option"

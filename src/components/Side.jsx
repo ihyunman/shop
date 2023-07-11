@@ -16,26 +16,17 @@ export default function Side() {
           {user && <Link onClick={logout}>LOGOUT</Link>} /{" "}
           <Link to="/cart">CART</Link>
         </li>
-        <li>
-          <Link>MYPAGE</Link>{" "}
-        </li>
-        {user && user.isAdmin && (
+
+        {user && (
           <li>
             <Link to="/addProduct">ADD PRODUCTS</Link>
           </li>
         )}
-      </ul>
-      <ul className="side__menu">
-        <li>
-          <Link>ABOUT</Link>
-        </li>
         <li>
           <Link to="/store">STORE</Link>
         </li>
-        <li>
-          <Link>Q&A</Link>
-        </li>
       </ul>
+      <ul className="side__menu"></ul>
     </div>
   );
 }

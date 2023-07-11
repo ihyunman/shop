@@ -38,9 +38,6 @@ a:hover {
   margin-bottom: 5px;
 }
 
-/* @media screen and (max-width: 770px) {
-  .side {
-    position: fixed;
-    top: 0;
-  }
-} */
+.side__ham {
+  display: none;
+}
