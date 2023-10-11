@@ -12,7 +12,10 @@ function Cart() {
 
   useEffect(() => {
     let price = 0;
-    products && products.map((product) => (price = price + product.price));
+    products &&
+      products.map(
+        (product) => (price = price + product.price * product.quantity)
+      );
     setPrice(price);
   }, [products]);
 
@@ -49,18 +52,6 @@ function Cart() {
             <span>{(price + 3000).toLocaleString()}</span>
           </li>
         </ul>
-        {/* <div className="cart__total--title">
-            <span></span>
-            <span>배송비</span>
-            <span></span>
-            <span>합계</span>
-          </div>
-          <div className="cart__total--price">
-            <span> + </span>
-            <span id="delivery">3000</span>
-            <span> = </span>
-            <span> {price + 3000} </span>
-          </div> */}
       </div>
     </div>
   );

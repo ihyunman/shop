@@ -1,15 +1,23 @@
 import React from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { BsTrash } from "react-icons/bs";
-import { addOrUpdateToCart, removeCart } from "../api/Firebase";
+import useProducts from "../hooks/useProducts";
+
 import "./CartItem.css";
 function CartItem({ product, uid }) {
+  const { addOrUpdate, remove } = useProducts();
+
   const handleUpdate = (value) => {
     if (value === -1 && product.quantity === 1) return;
-    addOrUpdateToCart(uid, { ...product, quantity: product.quantity + value });
+    addOrUpdate.mutate({
+      uid,
+      product: { ...product, quantity: product.quantity + value },
+    });
   };
 
-  const handleDelete = () => removeCart(uid, product.id);
+  const handleDelete = () => {
+    remove.mutate({ uid, productId: product.id });
+  };
 
   return (
     <li key={product.id} className="cart__item">

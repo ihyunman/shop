@@ -20,5 +20,10 @@
   width: 10%;
 }
 .cart__item--delBtn {
+  cursor: pointer;
   width: 10%;
+}
+
+.cart__item--delBtn:hover {
+  color: gray;
 }

@@ -1,5 +1,10 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { getProducts, addProduct as addNewProduct } from "../api/Firebase";
+import {
+  getProducts,
+  addProduct as addNewProduct,
+  addOrUpdateToCart,
+  removeCart,
+} from "../api/Firebase";
 
 export default function useProducts() {
   const queryClient = useQueryClient();
@@ -15,5 +20,23 @@ export default function useProducts() {
     }
   );
 
-  return { productsQuery, addProduct };
+  const addOrUpdate = useMutation(
+    ({ uid, product }) => addOrUpdateToCart(uid, product),
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries(["carts"]);
+      },
+    }
+  );
+
+  const remove = useMutation(
+    ({ uid, productId }) => removeCart(uid, productId),
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries(["carts"]);
+      },
+    }
+  );
+
+  return { productsQuery, addProduct, addOrUpdate, remove };
 }
