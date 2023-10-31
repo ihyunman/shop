@@ -1,4 +1,4 @@
-import "./Main.css";
+import "./css/Main.css";
 export default function Main() {
   return (
     <div className="outer">

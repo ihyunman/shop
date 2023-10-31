@@ -2,8 +2,8 @@ import React from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { BsTrash } from "react-icons/bs";
 import useProducts from "../hooks/useProducts";
+import "./css/CartItem.css";
 
-import "./CartItem.css";
 function CartItem({ product, uid }) {
   const { addOrUpdate, remove } = useProducts();
 

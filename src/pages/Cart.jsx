@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useAuthContext } from "../context/AuthContext";
 import { useQuery } from "@tanstack/react-query";
 import { getCart } from "../api/Firebase";
-
-import "./Cart.css";
+import "./css/Cart.css";
 import CartItem from "../components/CartItem";
+
 function Cart() {
   const { user } = useAuthContext();
   const { data: products } = useQuery(["carts"], () => getCart(user.uid));
   const [price, setPrice] = useState(0);
+  const [detPrice, setDelPrice] = useState(3000);
 
   useEffect(() => {
     let price = 0;
@@ -17,10 +18,11 @@ function Cart() {
         (product) => (price = price + product.price * product.quantity)
       );
     setPrice(price);
+    price > 50000 ? setDelPrice(0) : setDelPrice(3000);
   }, [products]);
 
   return (
-    <div className="container">
+    <div className="container form">
       <div className="space"></div>
       <div className="cart">
         <ul className="cart__list">
@@ -41,7 +43,7 @@ function Cart() {
           </li>
           <li>
             <span>배송비</span>
-            <span>3,000</span>
+            <span>{detPrice.toLocaleString()}</span>
           </li>
           <li>
             <span></span>
@@ -49,7 +51,7 @@ function Cart() {
           </li>
           <li>
             <span>합계</span>
-            <span>{(price + 3000).toLocaleString()}</span>
+            <span>{(price + detPrice).toLocaleString()}</span>
           </li>
         </ul>
       </div>

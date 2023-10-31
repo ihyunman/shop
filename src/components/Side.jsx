@@ -1,4 +1,4 @@
-import "./Side.css";
+import "./css/Side.css";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
 

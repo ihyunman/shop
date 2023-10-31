@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ProductDetail.css";
+import "./css/ProductDetail.css";
 import { useLocation } from "react-router-dom";
 import Button from "../components/Button";
 import { useAuthContext } from "../context/AuthContext";
@@ -20,7 +20,7 @@ function ProductDetail() {
   };
 
   return (
-    <div className="container">
+    <div className="container shop">
       <div className="space"></div>
       <div className="form__wrap">
         <img className="form__img" src={image} />

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./AddProducts.css";
+import "./css/AddProducts.css";
 import { uploadImage } from "../api/Uploader";
 import Button from "../components/Button";
 import useProducts from "../hooks/useProducts";
@@ -35,7 +35,7 @@ function AddProduct() {
   };
 
   return (
-    <div className="container">
+    <div className="container form">
       <div className="space"></div>
       <div className="form__wrap">
         {file && (
@@ -45,16 +45,25 @@ function AddProduct() {
             alt="product_img"
           />
         )}
-        {!file && <img className="form__img" src="" alt="Upload image" />}
+        {!file && (
+          <img
+            className="form__img"
+            onerror="this.style.display='none'"
+            // alt="상품을 추가해주세요."
+            alt=""
+          />
+        )}
 
         <ul className="form__info">
           <input
+            className="form__info--file"
             type="file"
             accept="image/*"
             name="file"
             required
             onChange={handleChange}
           />
+
           <li>
             <input
               type="text"
@@ -105,7 +114,9 @@ function AddProduct() {
               onChange={handleChange}
             />
           </li>
-          <Button size="big" title="등록" onClick={handleSubmit} />
+          <li>
+            <Button size="big" title="등록" onClick={handleSubmit} />
+          </li>
         </ul>
       </div>
     </div>

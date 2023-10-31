@@ -1,5 +1,5 @@
 import ProductCard from "../components/ProductCard";
-import "./Products.css";
+import "./css/Products.css";
 import useProducts from "../hooks/useProducts";
 export default function Products() {
   const {
@@ -7,7 +7,7 @@ export default function Products() {
   } = useProducts();
 
   return (
-    <div className="container">
+    <div className="container shop">
       <div className="space"></div>
       <ul className="products">
         {products &&

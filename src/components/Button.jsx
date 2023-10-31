@@ -1,5 +1,5 @@
 import React from "react";
-import "./Button.css";
+import "./css/Button.css";
 function Button({ size, title, onClick }) {
   return (
     <button className={size} onClick={onClick}>

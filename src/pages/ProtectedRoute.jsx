@@ -4,8 +4,8 @@ import { useAuthContext } from "../context/AuthContext";
 
 function ProtectedRoute({ children, requireAdmin }) {
   const { user } = useAuthContext();
-  //login check
-  //isAdmin check
+
+  //login check , isAdmin check
   if (!user || (requireAdmin && !user.isAdmin)) {
     return <Navigate to="/" replace />;
   }
