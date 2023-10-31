@@ -12,10 +12,11 @@
 }
 
 .detail__info--desc {
-  height: 60%;
+  height: 45%;
 }
 
 .detail__info--size {
+  width: 100%;
   height: 10%;
 }
 
@@ -25,7 +26,7 @@
 }
 
 .detail__info--size .options {
-  width: 87%;
+  width: 80%;
   height: 70%;
   border: 0.5px dashed black;
   border-radius: 5px;

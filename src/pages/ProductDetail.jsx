@@ -29,11 +29,8 @@ function ProductDetail() {
           <li className="detail__info--price">₩{price.toLocaleString()}</li>
           <li className="detail__info--desc">{desc}</li>
           <li className="detail__info--size">
-            <label htmlFor="option" className="label">
-              사이즈 :
-            </label>
+            <span className="label">사이즈 :</span>
             <select
-              id="option"
               className="options"
               value={select}
               onChange={(e) => setSelect(e.target.value)}

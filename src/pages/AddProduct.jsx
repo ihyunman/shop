@@ -50,20 +50,21 @@ function AddProduct() {
             className="form__img"
             onerror="this.style.display='none'"
             // alt="상품을 추가해주세요."
-            alt=""
+            alt="상품을 추가해주세요."
           />
         )}
 
         <ul className="form__info">
-          <input
-            className="form__info--file"
-            type="file"
-            accept="image/*"
-            name="file"
-            required
-            onChange={handleChange}
-          />
-
+          <li>
+            <input
+              className="form__info--file"
+              type="file"
+              accept="image/*"
+              name="file"
+              required
+              onChange={handleChange}
+            />
+          </li>
           <li>
             <input
               type="text"
@@ -95,14 +96,14 @@ function AddProduct() {
             />
           </li>
           <li>
-            <input
+            <textarea
               type="text"
               placeholder="상품설명"
               name="desc"
               value={product.desc ?? ""}
               required
               onChange={handleChange}
-            />
+            ></textarea>
           </li>
           <li>
             <input
