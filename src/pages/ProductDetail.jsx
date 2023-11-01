@@ -25,7 +25,9 @@ function ProductDetail() {
       <div className="form__wrap">
         <img className="form__img" src={image} />
         <ul className="form__info">
-          <h1 className="detail__info--title">{title.toUpperCase()}</h1>
+          <li>
+            <h1 className="detail__info--title">{title.toUpperCase()}</h1>
+          </li>
           <li className="detail__info--price">₩{price.toLocaleString()}</li>
           <li className="detail__info--desc">{desc}</li>
           <li className="detail__info--size">
@@ -42,7 +44,9 @@ function ProductDetail() {
               ))}
             </select>
           </li>
-          <Button size="big" title="ADD CART" onClick={handleClick} />
+          <li>
+            <Button size="big" title="ADD CART" onClick={handleClick} />
+          </li>
         </ul>
       </div>
     </div>

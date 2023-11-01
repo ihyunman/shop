@@ -46,15 +46,10 @@ function AddProduct() {
           />
         )}
         {!file && (
-          <img
-            className="form__img"
-            onerror="this.style.display='none'"
-            // alt="상품을 추가해주세요."
-            alt="상품을 추가해주세요."
-          />
+          <img className="form__img" onerror="this.style.display='none'" />
         )}
 
-        <ul className="form__info">
+        <ul className="form__add">
           <li>
             <input
               className="form__info--file"
